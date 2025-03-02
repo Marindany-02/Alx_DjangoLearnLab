@@ -15,3 +15,24 @@ Introduction to Django
 ## Testing:
 1. Create test users and assign them to groups via the Django admin.
 2. Log in as different users and attempt various actions to verify permission enforcement.
+
+## Security Features Implemented
+
+1. **Secure Settings:**
+   - Disabled DEBUG in production.
+   - Added XSS, Content Type Sniffing, and Frame protection headers.
+   - Enforced secure cookies.
+
+2. **CSRF Protection:**
+   - CSRF tokens added to all forms.
+
+3. **SQL Injection Prevention:**
+   - Used Django ORM with safe input handling (no raw SQL).
+
+4. **Content Security Policy (CSP):**
+   - Add django-csp middleware or manual headers for CSP control.
+
+5. **Access Control:**
+   - Permissions enforced with decorators.
+
+Test with different users to verify access restrictions
