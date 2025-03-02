@@ -9,3 +9,9 @@ class BookAdmin(admin.ModelAdmin):
     search_fields=('title','author')
 admin.site.register(Book,BookAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
+
+from django.contrib import admin
+from .models import Book, CustomUser
+
+admin.site.register(Book)
+admin.site.register(CustomUser)
