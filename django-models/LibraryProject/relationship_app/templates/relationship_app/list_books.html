@@ -8,6 +8,13 @@
 </head>
 <body>
     <h1>Books Available:</h1>
+
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Login</a></p>
+    {% endif %}
+
     {% if books %}
     <ul>
         {% for book in books %}
